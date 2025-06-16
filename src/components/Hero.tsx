@@ -64,7 +64,6 @@ const Hero = () => {
            <a
             href="/Devansh_Bansal_CV.pdf"
             download
-            type="application/pdf"
             className="px-6 py-3 bg-blue-700 text-white rounded-lg hover:bg-blue-800"
             >
             Download CV
