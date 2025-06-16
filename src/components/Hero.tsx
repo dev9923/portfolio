@@ -67,7 +67,7 @@ const Hero = () => {
               type="application/pdf"
               className="px-8 py-4 border-2 border-blue-700 text-blue-700 rounded-full font-semibold hover:bg-blue-700 hover:text-white transition-all duration-300 flex items-center gap-2"
             >
-              <Download size={20} />
+              <Download size={900} />
               Download CV
             </a>
             
