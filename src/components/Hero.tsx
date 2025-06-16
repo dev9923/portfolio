@@ -62,7 +62,7 @@ const Hero = () => {
               View My Work
             </button>
            <a
-            href="/mnt/data/Resume (3).pdf"
+            href="/Resume (3).pdf"
             download
             className="inline-flex items-center gap-2 px-6 py-3 bg-blue-700 text-white font-semibold rounded-lg hover:bg-blue-800 transition-all"
             >
