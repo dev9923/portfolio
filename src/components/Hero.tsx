@@ -70,6 +70,7 @@ const Hero = () => {
               <Download size={20} />
               Download CV
             </a>
+            
           </div>
 
           {/* Social Links */}
