@@ -8,21 +8,21 @@ const Hero = () => {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
- 
+
   return (
     <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-purple-50 pt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="space-y-8 animate-fade-in">
           {/* Profile Image */}
           <div className="mx-auto w-40 h-40 rounded-full overflow-hidden shadow-2xl ring-4 ring-white">
-          <img src="/images/IMG (2).jpg" 
-            alt="My Photo" 
-            width={200} 
-            className="rounded-full shadow-md" 
+            <img
+              src="/images/IMG (2).jpg"
+              alt="My Photo"
+              width={200}
+              className="rounded-full shadow-md"
             />
-
           </div>
-          
+
           <div className="space-y-6">
             <div className="space-y-2">
               <p className="text-lg text-gray-600 font-medium">Hello, I'm</p>
@@ -32,7 +32,7 @@ const Hero = () => {
                 </span>
               </h1>
             </div>
-            
+
             <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               Passionate Web Developer and Software Engineer with a focus on building modern, scalable, and user-friendly solutions.
             </p>
@@ -58,15 +58,18 @@ const Hero = () => {
             <button
               onClick={() => scrollToSection('projects')}
               className="px-8 py-4 bg-blue-700 text-white rounded-full font-semibold hover:bg-blue-800 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
-            > 
+            >
               View My Work
             </button>
-           <a 
-             href="/cv.pdf" 
-             download>
-             Download CV
-           </a>
-
+            <a
+              href="/cv.pdf"
+              download="Devansh_Bansal_CV.pdf"
+              type="application/pdf"
+              className="px-8 py-4 border-2 border-blue-700 text-blue-700 rounded-full font-semibold hover:bg-blue-700 hover:text-white transition-all duration-300 flex items-center gap-2"
+            >
+              <Download size={20} />
+              Download CV
+            </a>
           </div>
 
           {/* Social Links */}
