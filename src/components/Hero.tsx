@@ -61,13 +61,11 @@ const Hero = () => {
             > 
               View My Work
             </button>
-           <a
-            href="/Devansh_Bansal_CV.pdf"
-            download
-            className="px-6 py-3 bg-blue-700 text-white rounded-lg hover:bg-blue-800"
-            >
-            Download CV
-            </a>
+           <a 
+             href="/cv.pdf" 
+             download>
+             Download CV
+           </a>
 
           </div>
 
