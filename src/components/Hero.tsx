@@ -61,13 +61,11 @@ const Hero = () => {
             > 
               View My Work
             </button>
-           <a
-            href="/Resume (3).pdf"
-            download
-            className="inline-flex items-center gap-2 px-6 py-3 bg-blue-700 text-white font-semibold rounded-lg hover:bg-blue-800 transition-all"
-            >
-            Download CV
-          </a>
+           <a 
+             href="/Resume.pdf" 
+             download>
+             Download CV
+           </a>
 
           </div>
 
