@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Linkedin, Mail, Download } from 'lucide-react';
+import { TrendingUp, BarChart3, DollarSign, Zap } from 'lucide-react';
 
 const Hero = () => {
   const scrollToSection = (sectionId: string) => {
@@ -10,45 +10,43 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-purple-50 pt-20">
+    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-emerald-50 via-white to-blue-50 pt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="space-y-8 animate-fade-in">
-          {/* Profile Image */}
-          <div className="mx-auto w-40 h-40 rounded-full overflow-hidden shadow-2xl ring-4 ring-white">
-            <img
-              src="/images/IMG (2).jpg"
-              alt="My Photo"
-              width={200}
-              className="rounded-full shadow-md"
-            />
+          {/* Hero Badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-emerald-100 to-blue-100 rounded-full text-emerald-700 font-medium">
+            <Zap size={16} />
+            <span>AI-Powered Stock Predictions</span>
           </div>
 
           <div className="space-y-6">
-            <div className="space-y-2">
-              <p className="text-lg text-gray-600 font-medium">Hello, I'm</p>
-              <h1 className="text-5xl md:text-7xl font-bold text-gray-900 leading-tight">
-                <span className="bg-gradient-to-r from-blue-700 via-purple-600 to-emerald-500 bg-clip-text text-transparent">
-                  DEVANSH BANSAL
-                </span>
-              </h1>
-            </div>
-
-            <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Passionate Web Developer and Software Engineer with a focus on building modern, scalable, and user-friendly solutions.
+            <h1 className="text-5xl md:text-7xl font-bold text-gray-900 leading-tight">
+              <span className="bg-gradient-to-r from-emerald-600 via-blue-600 to-purple-600 bg-clip-text text-transparent">
+                StockSage Pro
+              </span>
+            </h1>
+            
+            <p className="text-2xl md:text-3xl text-gray-700 font-semibold">
+              Advanced Stock Prediction Platform
             </p>
 
-            <div className="flex flex-wrap justify-center gap-4 text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              Harness the power of AI and machine learning to make informed investment decisions. 
+              Get real-time market data, predictive analytics, and seamless trading integration.
+            </p>
+
+            <div className="flex flex-wrap justify-center gap-6 text-lg text-gray-600 max-w-4xl mx-auto">
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                <span>Live Market Data</span>
+              </div>
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                <span>BTech CSE Core @ SRM University</span>
+                <span>AI Predictions</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                <span>Full-Stack Development</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
-                <span>AI & Machine Learning</span>
+                <span>Trading Integration</span>
               </div>
             </div>
           </div>
@@ -56,59 +54,37 @@ const Hero = () => {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
             <button
-              onClick={() => scrollToSection('projects')}
-              className="px-8 py-4 bg-blue-700 text-white rounded-full font-semibold hover:bg-blue-800 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              onClick={() => scrollToSection('predictions')}
+              className="px-8 py-4 bg-gradient-to-r from-emerald-500 to-blue-600 text-white rounded-full font-semibold hover:shadow-xl transition-all duration-300 transform hover:scale-105"
             >
-              View My Work
+              Start Predicting
             </button>
-            <a
-              href="/cv.pdf"
-              download="cv.pdf"
-              type="application/pdf"
-              className="px-8 py-4 border-2 border-blue-700 text-blue-700 rounded-full font-semibold hover:bg-blue-700 hover:text-white transition-all duration-300 flex items-center gap-2"
+            <button
+              onClick={() => scrollToSection('market')}
+              className="px-8 py-4 border-2 border-emerald-500 text-emerald-600 rounded-full font-semibold hover:bg-emerald-500 hover:text-white transition-all duration-300"
             >
-              <Download size={20} />
-              Download CV
-            </a>
-            
+              View Live Market
+            </button>
           </div>
 
-          {/* Social Links */}
-          <div className="flex justify-center space-x-6 pt-8">
-            <a
-              href="https://github.com/dev9923"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 bg-white rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:scale-110 text-gray-600 hover:text-blue-700"
-              aria-label="GitHub"
-            >
-              <Github size={24} />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/devansh-bansal-329ab7b1/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 bg-white rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:scale-110 text-gray-600 hover:text-blue-700"
-              aria-label="LinkedIn"
-            >
-              <Linkedin size={24} />
-            </a>
-            <a
-              href="mailto:devanshbansal500@gmail.com"
-              className="p-3 bg-white rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:scale-110 text-gray-600 hover:text-blue-700"
-              aria-label="Email"
-            >
-              <Mail size={24} />
-            </a>
-          </div>
-
-          {/* Scroll Indicator */}
-          <div className="pt-12">
-            <div className="animate-bounce">
-              <div className="w-6 h-10 border-2 border-gray-400 rounded-full mx-auto">
-                <div className="w-1 h-3 bg-gray-400 rounded-full mx-auto mt-2"></div>
-              </div>
-            </div>
+          {/* Stats */}
+          <div className="grid md:grid-cols-3 gap-8 pt-12 max-w-4xl mx-auto">
+            {[
+              { icon: TrendingUp, value: '95%', label: 'Prediction Accuracy' },
+              { icon: BarChart3, value: '500+', label: 'Stocks Tracked' },
+              { icon: DollarSign, value: '₹10M+', label: 'Trading Volume' }
+            ].map((stat) => {
+              const IconComponent = stat.icon;
+              return (
+                <div key={stat.label} className="text-center p-6 bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm">
+                  <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-r from-emerald-500 to-blue-600 text-white rounded-full mb-4">
+                    <IconComponent size={24} />
+                  </div>
+                  <div className="text-3xl font-bold text-gray-900 mb-2">{stat.value}</div>
+                  <div className="text-gray-600 font-medium">{stat.label}</div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

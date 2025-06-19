@@ -1,22 +1,24 @@
 import React from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
-import About from './components/About';
-import Skills from './components/Skills';
-import Certifications from './components/Certifications';
-import Projects from './components/Projects';
-import Contact from './components/Contact';
+import Features from './components/Features';
+import LiveMarket from './components/LiveMarket';
+import PredictionDashboard from './components/PredictionDashboard';
+import Pricing from './components/Pricing';
+import TradingPartners from './components/TradingPartners';
+import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gray-50">
       <Header />
       <Hero />
-      <About />
-      <Skills />
-      <Certifications />
-      <Projects />
-      <Contact />
+      <Features />
+      <LiveMarket />
+      <PredictionDashboard />
+      <Pricing />
+      <TradingPartners />
+      <Footer />
     </div>
   );
 }
