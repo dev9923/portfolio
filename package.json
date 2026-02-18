@@ -1,7 +1,7 @@
 {
-  "name": "stocksage-pro",
+  "name": "vite-react-typescript-starter",
   "private": true,
-  "version": "2.0.0",
+  "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -12,11 +12,7 @@
   "dependencies": {
     "lucide-react": "^0.344.0",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "recharts": "^2.8.0",
-    "axios": "^1.6.0",
-    "framer-motion": "^10.16.0",
-    "react-hot-toast": "^2.4.1"
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.1",
