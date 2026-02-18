@@ -16,8 +16,8 @@ const Hero = () => {
           {/* Profile Image */}
           <div className="mx-auto w-40 h-40 rounded-full overflow-hidden shadow-2xl ring-4 ring-white">
             <img
-              src="/images/IMG (2).jpg"
-              alt="My Photo"
+              src="/Devansh.jpg"
+              alt="Devansh Bansal"
               width={200}
               className="rounded-full shadow-md"
             />
