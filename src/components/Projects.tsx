@@ -1,5 +1,8 @@
-import React from 'react';
+"use client"
+
+
 import { Github, Music, Clock, Phone, Bot, TrendingUp, Network } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const Projects = () => {
   const projects = [
@@ -72,47 +75,72 @@ const Projects = () => {
         'Responsive Design: Optimized interface for all device types'
       ],
       github: 'https://github.com/dev9923/stopwatch.git'
+    },
+    {
+      title: 'Real-Time Poll Rooms',
+      description:
+        'A dynamic polling application enabling instant feedback and voting in dedicated rooms. Features accurate real-time updates and an intuitive user interface for seamless interaction.',
+      icon: Network,
+      color: 'from-red-500 to-pink-500',
+      tags: ['Next.js', 'Socket.io', 'Node.js', 'Real-time', 'Tailwind CSS'],
+      features: [
+        'Live Polling: Instant vote updates using WebSockets',
+        'Room Architecture: Dedicated private or public rooms for poll management',
+        'Interactive UI: Clean and responsive design for enhanced user engagement'
+      ],
+      github: 'https://github.com/dev9923/Real-Time-Poll-Rooms.git'
     }
   ];
 
   return (
-    <section id="projects" className="py-20 bg-white">
+    <section id="projects" className="py-20 bg-white dark:bg-black transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Featured Projects</h2>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4"
+          >
+            Featured Projects
+          </motion.h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-700 to-purple-600 mx-auto rounded-full"></div>
-          <p className="text-xl text-gray-600 mt-6 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-400 mt-6 max-w-3xl mx-auto">
             A showcase of innovative projects demonstrating full-stack development, AI integration, and machine learning expertise
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8">
-          {projects.map((project) => {
+          {projects.map((project, index) => {
             const IconComponent = project.icon;
             return (
-              <div
+              <motion.div
                 key={project.title}
-                className="bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 hover:scale-105 border border-gray-100"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-gradient-to-br from-gray-50 to-white dark:from-slate-800 dark:to-slate-900 p-8 rounded-2xl shadow-sm hover:shadow-xl dark:shadow-slate-900/50 transition-all duration-300 hover:scale-105 border border-gray-100 dark:border-slate-700"
               >
                 {/* Header */}
                 <div className="flex items-center gap-4 mb-6">
                   <div className={`p-4 bg-gradient-to-r ${project.color} text-white rounded-xl shadow-md`}>
                     <IconComponent size={28} />
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900">{project.title}</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white">{project.title}</h3>
                 </div>
 
                 {/* Description */}
-                <p className="text-gray-600 leading-relaxed mb-6 text-lg">{project.description}</p>
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-6 text-lg">{project.description}</p>
 
                 {/* Key Features */}
                 <div className="mb-6">
-                  <h4 className="text-sm font-semibold text-gray-800 uppercase tracking-wide mb-3">Key Features</h4>
+                  <h4 className="text-sm font-semibold text-gray-800 dark:text-gray-200 uppercase tracking-wide mb-3">Key Features</h4>
                   <div className="space-y-2">
                     {project.features.map((feature, idx) => (
                       <div key={idx} className="flex items-start gap-3">
                         <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mt-2 flex-shrink-0"></div>
-                        <p className="text-gray-700 text-sm leading-relaxed">{feature}</p>
+                        <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">{feature}</p>
                       </div>
                     ))}
                   </div>
@@ -123,7 +151,7 @@ const Projects = () => {
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium hover:bg-gray-200 transition-colors duration-200"
+                      className="px-3 py-1 bg-gray-100 dark:bg-slate-700 text-gray-700 dark:text-gray-200 rounded-full text-sm font-medium hover:bg-gray-200 dark:hover:bg-slate-600 transition-colors duration-200"
                     >
                       {tag}
                     </span>
@@ -136,19 +164,24 @@ const Projects = () => {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 border-2 border-gray-300 text-gray-700 rounded-lg font-medium hover:border-gray-400 hover:bg-gray-50 transition-all duration-200"
+                    className="flex items-center gap-2 px-4 py-2 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 rounded-lg font-medium hover:border-gray-400 dark:hover:border-gray-500 hover:bg-gray-50 dark:hover:bg-slate-800 transition-all duration-200"
                   >
                     <Github size={18} />
                     Code
                   </a>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>
 
         {/* Project Stats */}
-        <div className="mt-16 grid md:grid-cols-3 gap-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-16 grid md:grid-cols-3 gap-8"
+        >
           {[
             { number: '5+', label: 'Projects Completed', icon: Network },
             { number: '3+', label: 'AI/ML Projects', icon: Bot },
@@ -156,16 +189,16 @@ const Projects = () => {
           ].map((stat) => {
             const IconComponent = stat.icon;
             return (
-              <div key={stat.label} className="text-center p-6 bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl">
+              <div key={stat.label} className="text-center p-6 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-slate-800 dark:to-slate-900 rounded-2xl dark:border dark:border-slate-700">
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full mb-4">
                   <IconComponent size={24} />
                 </div>
-                <div className="text-3xl font-bold text-gray-900 mb-2">{stat.number}</div>
-                <div className="text-gray-600 font-medium">{stat.label}</div>
+                <div className="text-3xl font-bold text-gray-900 dark:text-white mb-2">{stat.number}</div>
+                <div className="text-gray-600 dark:text-gray-400 font-medium">{stat.label}</div>
               </div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
