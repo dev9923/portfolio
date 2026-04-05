@@ -1,14 +1,11 @@
 "use client"
 
-
 import {
     Code,
     Server,
     Database,
-    Terminal,
-    Layers,
     Cpu,
-    Blocks
+    GitBranch
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -17,51 +14,39 @@ const Skills = () => {
         {
             title: 'Frontend',
             icon: Code,
-            color: 'from-blue-500 to-blue-600',
-            skills: ['HTML5', 'CSS3', 'JavaScript', 'React.js', 'Tailwind CSS']
+            color: 'from-blue-500 to-cyan-500',
+            skills: ['React.js', 'Next.js', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'HTML5', 'CSS3']
         },
         {
             title: 'Backend',
             icon: Server,
-            color: 'from-emerald-500 to-emerald-600',
-            skills: ['Node.js', 'Express.js', 'RESTful APIs', 'Authentication']
+            color: 'from-emerald-500 to-teal-500',
+            skills: ['Java 21', 'Spring Boot', 'RESTful APIs', 'Node.js', 'Express.js', 'Maven']
         },
         {
             title: 'Database',
             icon: Database,
-            color: 'from-purple-500 to-purple-600',
-            skills: ['MongoDB', 'MySQL', 'Database Design', 'Data Modeling']
+            color: 'from-purple-500 to-violet-500',
+            skills: ['MongoDB', 'MySQL', 'PostgreSQL', 'Database Design', 'Data Modeling']
         },
         {
-            title: 'Template Engines',
-            icon: Layers,
-            color: 'from-orange-500 to-orange-600',
-            skills: ['EJS', 'EJS Mate', 'Dynamic Rendering']
-        },
-        {
-            title: 'Tools & Others',
-            icon: Terminal,
-            color: 'from-gray-500 to-gray-600',
-            skills: ['Git', 'GitHub', 'VS Code', 'npm/yarn']
+            title: 'DevOps & Monitoring',
+            icon: GitBranch,
+            color: 'from-orange-500 to-amber-500',
+            skills: ['Jenkins', 'Grafana', 'Kibana', 'Argo CD']
         },
         {
             title: 'Languages',
             icon: Cpu,
-            color: 'from-pink-500 to-rose-600',
-            skills: ['C', 'C++', 'Python', 'Java']
-        },
-        {
-            title: 'Emerging Tech',
-            icon: Blocks,
-            color: 'from-amber-500 to-yellow-600',
-            skills: ['Blockchain', 'Smart Contracts', 'AI & Machine Learning']
+            color: 'from-pink-500 to-rose-500',
+            skills: ['Java', 'Python', 'C', 'C++']
         }
     ];
 
     const currentlyLearning = [
-        { name: 'EJS', progress: 75, color: 'bg-emerald-500' },
-        { name: 'Advanced React', progress: 85, color: 'bg-blue-500' },
-        { name: 'MongoDB Optimization', progress: 60, color: 'bg-purple-500' }
+        { name: 'Spring Boot & Microservices', progress: 80, color: 'bg-emerald-500' },
+        { name: 'DevOps & CI/CD', progress: 70, color: 'bg-orange-500' },
+        { name: 'System Design', progress: 65, color: 'bg-purple-500' }
     ];
 
     const container = {

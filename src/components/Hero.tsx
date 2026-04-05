@@ -41,7 +41,7 @@ const Hero = () => {
                         </div>
 
                         <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                            Passionate Web Developer and Software Engineer with a focus on building modern, scalable, and user-friendly solutions.
+                            SDE Intern building scalable backend systems and responsive web applications using Java, Spring Boot, React, and Node.js.
                         </p>
 
                         <motion.div
@@ -52,15 +52,15 @@ const Hero = () => {
                         >
                             <div className="flex items-center gap-2 bg-white/50 dark:bg-white/5 px-4 py-2 rounded-full backdrop-blur-sm border border-gray-100 dark:border-gray-800">
                                 <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
-                                <span>BTech CSE Core @ SRM Institute of Science and Technology, kattankulathur, Chennai</span>
+                                <span>SDE Intern @ Paytm</span>
                             </div>
                             <div className="flex items-center gap-2 bg-white/50 dark:bg-white/5 px-4 py-2 rounded-full backdrop-blur-sm border border-gray-100 dark:border-gray-800">
                                 <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></div>
-                                <span>Full-Stack Development</span>
+                                <span>BTech CSE Core @ SRMIST, Chennai</span>
                             </div>
                             <div className="flex items-center gap-2 bg-white/50 dark:bg-white/5 px-4 py-2 rounded-full backdrop-blur-sm border border-gray-100 dark:border-gray-800">
                                 <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
-                                <span>AI & Machine Learning</span>
+                                <span>Java • Spring Boot • React • Node.js</span>
                             </div>
                         </motion.div>
                     </div>

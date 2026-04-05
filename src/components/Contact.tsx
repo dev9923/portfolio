@@ -223,8 +223,8 @@ const Contact = () => {
         {/* Footer */}
         <div className="text-center pt-16 border-t border-gray-200 dark:border-gray-800 mt-16">
           <p className="text-gray-600 dark:text-gray-400">
-            © 2025 DEVANSH BANSAL.
-            Built with Next.js, Tailwind CSS & Framer Motion.
+            © 2026 DEVANSH BANSAL.
+            Built with Next.js.
           </p>
         </div>
       </div>

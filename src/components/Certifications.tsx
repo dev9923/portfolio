@@ -7,12 +7,12 @@ import { motion } from 'framer-motion';
 const Certifications = () => {
     const certifications = [
         {
-            title: 'Graph Theory Programming',
-            institution: 'Algo University',
-            icon: Brain,
-            color: 'from-purple-500 to-indigo-500',
-            description: 'Advanced algorithms and data structures focusing on graph theory applications and optimization techniques.',
-            skills: ['Graph Algorithms', 'Dynamic Programming', 'Optimization', 'Problem Solving']
+            title: 'IBM SkillsBuild AI NextGen Certification 2026',
+            institution: 'IBM',
+            icon: BarChart3,
+            color: 'from-emerald-500 to-teal-500',
+            description: 'Industry-recognized AI certification program covering artificial intelligence fundamentals, prompt engineering, and real-world AI application development.',
+            skills: ['Artificial Intelligence', 'Prompt Engineering', 'AI Applications', 'Machine Learning']
         },
         {
             title: 'Introduction to Generative AI',
@@ -23,12 +23,12 @@ const Certifications = () => {
             skills: ['Machine Learning', 'AI Models', 'Neural Networks', 'Deep Learning']
         },
         {
-            title: 'Data Science',
-            institution: 'Infosys Springboard',
-            icon: BarChart3,
-            color: 'from-emerald-500 to-teal-500',
-            description: 'Complete data science curriculum covering statistical analysis, data visualization, and predictive modeling.',
-            skills: ['Python', 'Data Analysis', 'Statistics', 'Data Visualization']
+            title: 'Graph Theory Programming',
+            institution: 'Algo University',
+            icon: Brain,
+            color: 'from-purple-500 to-indigo-500',
+            description: 'Advanced algorithms and data structures focusing on graph theory applications and optimization techniques.',
+            skills: ['Graph Algorithms', 'Dynamic Programming', 'Optimization', 'Problem Solving']
         }
     ];
 

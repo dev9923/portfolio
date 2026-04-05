@@ -6,15 +6,39 @@ import { motion } from 'framer-motion';
 const Experience = () => {
     const experiences = [
         {
-            company: 'UIDAI (Ministry of Electronics & Information Technology)',
+            company: 'Paytm Payment Services Limited',
             role: 'SDE Intern',
-            location: 'Head Office, New Delhi',
-            period: 'Jun 2025 – Present',
+            location: 'Noida, India',
+            period: 'Mar 2026 – Present',
             description: [
-                'Contributed to the Aadhaar Verification Portal, ASK Feedback System, and Aadhaar Document Checker, a mission-critical project enabling secure and efficient identity authentication for millions of users.',
-                'Developed and maintained full stack features including front-end interfaces, back-end APIs, and database workflows.',
-                'Implemented secure authentication protocols and improved system scalability and performance.',
-                'Collaborated with senior developers and government stakeholders to ensure high-quality, reliable solutions.'
+                'Developing and maintaining backend microservices using Java 21, Spring Boot, and Maven for high-traffic fintech infrastructure.',
+                'Architecting and integrating RESTful APIs to support secure, scalable payment-platform features.',
+                'Collaborating on CI/CD pipelines with Jenkins and Argo CD to automate build, test, and deployment workflows.',
+                'Supporting reliable observability and monitoring with Grafana dashboards across production services.'
+            ],
+            projects: [
+                {
+                    name: 'Payment Platform Microservices',
+                    description: 'Core backend microservices powering Paytm\'s payment platform, handling millions of transactions with high availability and low latency.',
+                    technologies: ['Java 21', 'Spring Boot', 'Maven', 'REST APIs', 'Microservices']
+                },
+                {
+                    name: 'CI/CD Pipeline Automation',
+                    description: 'Automated build, test, and deployment workflows enabling rapid and reliable releases across payment services.',
+                    technologies: ['Jenkins', 'Argo CD', 'Docker', 'Grafana']
+                }
+            ],
+            color: 'from-blue-500 to-cyan-500'
+        },
+        {
+            company: 'Unique Identification Authority of India (UIDAI)',
+            role: 'SDE Intern',
+            location: 'New Delhi, India',
+            period: 'Jun 2025 – Oct 2025',
+            description: [
+                'Engineered responsive React UI components and production-grade Node.js/MongoDB REST APIs for the Aadhaar Verification Portal, delivering features used by national verification services.',
+                'Strengthened authentication flows and centralized input validation to align with government security and audit requirements while reducing authentication failures.',
+                'Optimized server-side logic and database queries, introduced caching and connection pooling, and reduced average API latency while nearly doubling verification throughput during peak loads.'
             ],
             projects: [
                 {
@@ -30,7 +54,7 @@ const Experience = () => {
                 {
                     name: 'Aadhaar Verification Portal',
                     description: 'Contributed to core backend services for Aadhaar ecosystem, optimizing data processing and ensuring high availability for critical identity services.',
-                    technologies: ['Java', 'Spring Boot', 'Microservices', 'PostgreSQL']
+                    technologies: ['Node.js', 'MongoDB', 'REST APIs', 'Authentication']
                 }
             ],
             color: 'from-orange-500 to-red-500'
@@ -66,7 +90,7 @@ const Experience = () => {
                             <div className={`absolute top-0 left-[-9px] w-4 h-4 rounded-full bg-gradient-to-r ${exp.color} ring-4 ring-white dark:ring-black`} />
 
                             <div className="bg-gray-50 dark:bg-slate-900 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-slate-800">
-                                <div className="flex flex-wrapjustify-between items-start gap-4 mb-6">
+                                <div className="flex flex-wrap justify-between items-start gap-4 mb-6">
                                     <div>
                                         <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{exp.role}</h3>
                                         <div className="flex items-center gap-2 text-blue-700 dark:text-blue-400 font-semibold text-lg">
