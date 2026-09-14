@@ -1,158 +1,96 @@
-"use client"
+import { Container } from "@/components/ui/Section";
+import { SectionHeader } from "@/components/ui/SectionHeader";
+import { Reveal } from "@/components/ui/Reveal";
+import { Marquee } from "@/components/ui/Marquee";
+import { allSkills, learningTracks, skillGroups } from "@/data/skills";
+import { accents } from "@/lib/accents";
+import { icons } from "@/lib/icons";
+import { cn } from "@/lib/utils";
 
-import {
-    Code,
-    Server,
-    Database,
-    Cpu,
-    GitBranch
-} from 'lucide-react';
-import { motion } from 'framer-motion';
+const spanClass = {
+  2: "md:col-span-2",
+  3: "md:col-span-3",
+  4: "md:col-span-4",
+  6: "md:col-span-6",
+} as const;
 
-const Skills = () => {
-    const skillCategories = [
-        {
-            title: 'Frontend',
-            icon: Code,
-            color: 'from-blue-500 to-cyan-500',
-            skills: ['React.js', 'Next.js', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'HTML5', 'CSS3']
-        },
-        {
-            title: 'Backend',
-            icon: Server,
-            color: 'from-emerald-500 to-teal-500',
-            skills: ['Java 21', 'Spring Boot', 'RESTful APIs', 'Node.js', 'Express.js', 'Maven']
-        },
-        {
-            title: 'Database',
-            icon: Database,
-            color: 'from-purple-500 to-violet-500',
-            skills: ['MongoDB', 'MySQL', 'PostgreSQL', 'Database Design', 'Data Modeling']
-        },
-        {
-            title: 'DevOps & Monitoring',
-            icon: GitBranch,
-            color: 'from-orange-500 to-amber-500',
-            skills: ['Jenkins', 'Grafana', 'Kibana', 'Argo CD']
-        },
-        {
-            title: 'Languages',
-            icon: Cpu,
-            color: 'from-pink-500 to-rose-500',
-            skills: ['Java', 'Python', 'C', 'C++']
-        }
-    ];
+const half = Math.ceil(allSkills.length / 2);
 
-    const currentlyLearning = [
-        { name: 'Spring Boot & Microservices', progress: 80, color: 'bg-emerald-500' },
-        { name: 'DevOps & CI/CD', progress: 70, color: 'bg-orange-500' },
-        { name: 'System Design', progress: 65, color: 'bg-purple-500' }
-    ];
+export default function Skills() {
+  return (
+    <section
+      id="stack"
+      aria-labelledby="stack-heading"
+      className="relative scroll-mt-24 py-20 sm:py-24"
+    >
+      <div className="space-y-3 py-2">
+        <Marquee items={allSkills.slice(0, half)} duration={44} />
+        <Marquee items={allSkills.slice(half)} duration={58} reverse />
+      </div>
 
-    const container = {
-        hidden: { opacity: 0 },
-        show: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.1
-            }
-        }
-    };
+      <Container className="mt-16">
+        <SectionHeader id="stack" eyebrow="Stack" title="What I work with" />
 
-    const item = {
-        hidden: { opacity: 0, y: 20 },
-        show: { opacity: 1, y: 0 }
-    };
-
-    return (
-        <section id="skills" className="py-20 bg-gray-50 dark:bg-slate-900 transition-colors duration-300">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-16">
-                    <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4"
+        <div className="grid gap-3 md:grid-cols-6">
+          {skillGroups.map((group, i) => {
+            const Icon = icons[group.icon];
+            const accent = accents[group.accent];
+            return (
+              <Reveal
+                key={group.id}
+                delay={i * 0.04}
+                className={cn("h-full", spanClass[group.span])}
+              >
+                <div className="glass h-full rounded-xl p-5">
+                  <div className="flex items-center gap-3">
+                    <span
+                      className={cn(
+                        "grid h-9 w-9 place-items-center rounded-lg",
+                        accent.tint,
+                        accent.text,
+                      )}
                     >
-                        Skills & Technologies
-                    </motion.h2>
-                    <div className="w-24 h-1 bg-gradient-to-r from-blue-700 to-purple-600 mx-auto rounded-full"></div>
-                    <p className="text-xl text-gray-600 dark:text-gray-400 mt-6 max-w-3xl mx-auto">
-                        A comprehensive toolkit for building modern, scalable web applications
-                    </p>
-                </div>
-
-                {/* Skills Grid */}
-                <motion.div
-                    variants={container}
-                    initial="hidden"
-                    whileInView="show"
-                    viewport={{ once: true }}
-                    className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16"
-                >
-                    {skillCategories.map((category) => {
-                        const IconComponent = category.icon;
-                        return (
-                            <motion.div
-                                key={category.title}
-                                variants={item}
-                                className="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm hover:shadow-lg dark:shadow-slate-900/50 transition-all duration-300 hover:scale-105 border border-transparent dark:border-slate-700"
-                            >
-                                <div className="flex items-center gap-4 mb-6">
-                                    <div className={`p-3 bg-gradient-to-r ${category.color} text-white rounded-xl shadow-md`}>
-                                        <IconComponent size={24} />
-                                    </div>
-                                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{category.title}</h3>
-                                </div>
-                                <div className="space-y-3">
-                                    {category.skills.map((skill) => (
-                                        <div
-                                            key={skill}
-                                            className="flex items-center gap-3 text-gray-700 dark:text-gray-300 hover:text-blue-700 dark:hover:text-blue-400 transition-colors duration-200"
-                                        >
-                                            <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
-                                            <span className="font-medium">{skill}</span>
-                                        </div>
-                                    ))}
-                                </div>
-                            </motion.div>
-                        );
-                    })}
-                </motion.div>
-
-                {/* Currently Learning Section */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm dark:shadow-slate-900/50 border border-transparent dark:border-slate-700"
-                >
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">
-                        🌱 Currently Learning
+                      <Icon size={16} aria-hidden />
+                    </span>
+                    <h3 className="font-display text-base font-semibold text-fg">
+                      {group.title}
                     </h3>
-                    <div className="grid md:grid-cols-3 gap-6">
-                        {currentlyLearning.map((item) => (
-                            <div key={item.name} className="space-y-3">
-                                <div className="flex justify-between items-center">
-                                    <span className="font-semibold text-gray-800 dark:text-gray-200">{item.name}</span>
-                                    <span className="text-sm text-gray-600 dark:text-gray-400">{item.progress}%</span>
-                                </div>
-                                <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
-                                    <motion.div
-                                        initial={{ width: 0 }}
-                                        whileInView={{ width: `${item.progress}%` }}
-                                        viewport={{ once: true }}
-                                        transition={{ duration: 1, ease: "easeOut" }}
-                                        className={`h-3 ${item.color} rounded-full`}
-                                    ></motion.div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </motion.div>
-            </div>
-        </section>
-    );
-};
+                  </div>
+                  <ul className="mt-4 flex flex-wrap gap-1.5">
+                    {group.skills.map((s) => (
+                      <li
+                        key={s}
+                        className="rounded-md border border-line px-2.5 py-1 font-mono text-[11px] text-muted"
+                      >
+                        {s}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </Reveal>
+            );
+          })}
+        </div>
 
-export default Skills;
+        <div className="mt-14">
+          <h3 className="font-mono text-[11px] uppercase tracking-[0.18em] text-subtle">
+            Currently going deeper
+          </h3>
+          <dl className="mt-4 divide-y divide-line border-y border-line">
+            {learningTracks.map((track) => (
+              <div
+                key={track.topic}
+                className="grid gap-1 py-4 sm:grid-cols-[minmax(0,16rem)_1fr] sm:gap-6"
+              >
+                <dt className="text-sm font-medium text-fg">{track.topic}</dt>
+                <dd className="text-sm leading-relaxed text-muted">
+                  {track.rationale}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </Container>
+    </section>
+  );
+}
