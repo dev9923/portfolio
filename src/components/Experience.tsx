@@ -1,145 +1,165 @@
-"use client"
+import { MapPin } from "lucide-react";
+import { Section } from "@/components/ui/Section";
+import { SectionHeader } from "@/components/ui/SectionHeader";
+import { Reveal } from "@/components/ui/Reveal";
+import { Chip } from "@/components/ui/Chip";
+import { experience } from "@/data/experience";
+import { accents } from "@/lib/accents";
+import { cn } from "@/lib/utils";
 
-import { Building2, Calendar, CheckCircle2 } from 'lucide-react';
-import { motion } from 'framer-motion';
+export default function Experience() {
+  return (
+    <Section id="experience">
+      <SectionHeader
+        id="experience"
+        eyebrow="Experience"
+        title="Where I've shipped"
+      />
 
-const Experience = () => {
-    const experiences = [
-        {
-            company: 'Paytm Payment Services Limited',
-            role: 'SDE Intern',
-            location: 'Noida, India',
-            period: 'Mar 2026 – Present',
-            description: [
-                'Developing and maintaining backend microservices using Java 21, Spring Boot, and Maven for high-traffic fintech infrastructure.',
-                'Architecting and integrating RESTful APIs to support secure, scalable payment-platform features.',
-                'Collaborating on CI/CD pipelines with Jenkins and Argo CD to automate build, test, and deployment workflows.',
-                'Supporting reliable observability and monitoring with Grafana dashboards across production services.'
-            ],
-            projects: [
-                {
-                    name: 'Payment Platform Microservices',
-                    description: 'Core backend microservices powering Paytm\'s payment platform, handling millions of transactions with high availability and low latency.',
-                    technologies: ['Java 21', 'Spring Boot', 'Maven', 'REST APIs', 'Microservices']
-                },
-                {
-                    name: 'CI/CD Pipeline Automation',
-                    description: 'Automated build, test, and deployment workflows enabling rapid and reliable releases across payment services.',
-                    technologies: ['Jenkins', 'Argo CD', 'Docker', 'Grafana']
-                }
-            ],
-            color: 'from-blue-500 to-cyan-500'
-        },
-        {
-            company: 'Unique Identification Authority of India (UIDAI)',
-            role: 'SDE Intern',
-            location: 'New Delhi, India',
-            period: 'Jun 2025 – Oct 2025',
-            description: [
-                'Engineered responsive React UI components and production-grade Node.js/MongoDB REST APIs for the Aadhaar Verification Portal, delivering features used by national verification services.',
-                'Strengthened authentication flows and centralized input validation to align with government security and audit requirements while reducing authentication failures.',
-                'Optimized server-side logic and database queries, introduced caching and connection pooling, and reduced average API latency while nearly doubling verification throughput during peak loads.'
-            ],
-            projects: [
-                {
-                    name: 'Aadhaar Document Checker',
-                    description: 'An official web application to guide 1.4B+ Indian residents through Aadhaar enrolment/update processes. Features a Document Checker Wizard, interactive checklists, and 40+ document type advisory system.',
-                    technologies: ['React', 'Vite', 'Tailwind CSS', 'Redux', 'Radix UI']
-                },
-                {
-                    name: 'ASK Feedback System',
-                    description: 'Developed a comprehensive feedback collection system for Aadhaar Seva Kendras to monitor service quality and user satisfaction across verified operational centers.',
-                    technologies: ['Node.js', 'Express', 'MongoDB', 'React']
-                },
-                {
-                    name: 'Aadhaar Verification Portal',
-                    description: 'Contributed to core backend services for Aadhaar ecosystem, optimizing data processing and ensuring high availability for critical identity services.',
-                    technologies: ['Node.js', 'MongoDB', 'REST APIs', 'Authentication']
-                }
-            ],
-            color: 'from-orange-500 to-red-500'
-        }
-    ];
-
-    return (
-        <section id="experience" className="py-20 bg-white dark:bg-black transition-colors duration-300">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-16">
-                    <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4"
-                    >
-                        Work Experience
-                    </motion.h2>
-                    <div className="w-24 h-1 bg-gradient-to-r from-blue-700 to-purple-600 mx-auto rounded-full"></div>
-                </div>
-
-                <div className="max-w-4xl mx-auto">
-                    {experiences.map((exp, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, x: -20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
-                            className="relative pl-8 border-l-2 border-gray-200 dark:border-gray-700 pb-12 last:pb-0"
-                        >
-                            {/* Timeline Dot */}
-                            <div className={`absolute top-0 left-[-9px] w-4 h-4 rounded-full bg-gradient-to-r ${exp.color} ring-4 ring-white dark:ring-black`} />
-
-                            <div className="bg-gray-50 dark:bg-slate-900 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-slate-800">
-                                <div className="flex flex-wrap justify-between items-start gap-4 mb-6">
-                                    <div>
-                                        <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{exp.role}</h3>
-                                        <div className="flex items-center gap-2 text-blue-700 dark:text-blue-400 font-semibold text-lg">
-                                            <Building2 size={20} />
-                                            <span>{exp.company}</span>
-                                        </div>
-                                    </div>
-                                    <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400 bg-white dark:bg-slate-800 px-4 py-2 rounded-full text-sm font-medium shadow-sm">
-                                        <Calendar size={16} />
-                                        <span>{exp.period}</span>
-                                    </div>
-                                </div>
-
-                                <ul className="space-y-4">
-                                    {exp.description.map((item, i) => (
-                                        <li key={i} className="flex items-start gap-3">
-                                            <CheckCircle2 className="w-5 h-5 text-emerald-500 mt-1 flex-shrink-0" />
-                                            <span className="text-gray-700 dark:text-gray-300 leading-relaxed">{item}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-
-                                {exp.projects && (
-                                    <div className="mt-6 pt-6 border-t border-gray-100 dark:border-slate-800">
-                                        <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Key Projects</h4>
-                                        <div className="grid gap-4">
-                                            {exp.projects.map((project, idx) => (
-                                                <div key={idx} className="bg-white dark:bg-slate-800 p-4 rounded-xl border border-gray-100 dark:border-slate-700">
-                                                    <h5 className="font-bold text-gray-800 dark:text-gray-200 mb-1">{project.name}</h5>
-                                                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">{project.description}</p>
-                                                    <div className="flex flex-wrap gap-2">
-                                                        {project.technologies.map((tech) => (
-                                                            <span key={tech} className="px-2 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-400 text-xs rounded-md font-medium">
-                                                                {tech}
-                                                            </span>
-                                                        ))}
-                                                    </div>
-                                                </div>
-                                            ))}
-                                        </div>
-                                    </div>
-                                )}
-                            </div>
-                        </motion.div>
+      <div className="space-y-20 lg:space-y-28">
+        {experience.map((company) => {
+          const accent = accents[company.accent];
+          return (
+            <div key={company.id} className="grid gap-8 lg:grid-cols-12 lg:gap-12">
+              {/* Sticky company rail */}
+              <div className="lg:col-span-4">
+                <Reveal className="lg:sticky lg:top-28">
+                  <h3 className="font-display text-xl font-semibold text-fg">
+                    {company.company}
+                  </h3>
+                  <p className="mt-2 flex items-center gap-1.5 font-mono text-xs text-subtle">
+                    <MapPin size={12} aria-hidden />
+                    {company.location}
+                  </p>
+                  <p className="mt-1 font-mono text-xs text-subtle">
+                    {company.tenureLabel}
+                  </p>
+                  <p className="mt-4 max-w-[40ch] text-sm leading-relaxed text-muted">
+                    {company.summary}
+                  </p>
+                  <ul className="mt-5 flex flex-wrap gap-1.5">
+                    {company.stack.map((s) => (
+                      <li key={s}>
+                        <Chip>{s}</Chip>
+                      </li>
                     ))}
-                </div>
-            </div>
-        </section>
-    );
-};
+                  </ul>
+                </Reveal>
+              </div>
 
-export default Experience;
+              {/* Role timeline */}
+              <div className="lg:col-span-8">
+                <ol className="relative">
+                  {company.roles.map((role, i) => {
+                    const isLast = i === company.roles.length - 1;
+                    const nextRole = company.roles[i + 1];
+                    const promotionBelow =
+                      role.promotedFrom && nextRole?.title === role.promotedFrom;
+
+                    return (
+                      <li key={role.title} className="relative pl-8 sm:pl-10">
+                        {/* connector */}
+                        {!isLast && (
+                          <span
+                            aria-hidden
+                            className={cn(
+                              "absolute left-[5px] top-4 w-px",
+                              promotionBelow
+                                ? "bottom-0 bg-gradient-to-b from-accent-2 via-accent to-line"
+                                : "bottom-0 bg-line",
+                            )}
+                          />
+                        )}
+                        {/* dot */}
+                        <span
+                          aria-hidden
+                          className={cn(
+                            "absolute left-0 top-2.5 h-[11px] w-[11px] rounded-full border-2",
+                            role.current
+                              ? "border-accent-2 bg-accent-2 shadow-glow"
+                              : "border-line-strong bg-bg",
+                          )}
+                        />
+
+                        <div className={cn(!isLast && "pb-10")}>
+                          <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                            <h4 className="font-display text-lg font-semibold text-fg">
+                              {role.title}
+                            </h4>
+                            {role.current && (
+                              <span
+                                className={cn(
+                                  "rounded-full px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider",
+                                  accent.tint,
+                                  accent.text,
+                                )}
+                              >
+                                Current
+                              </span>
+                            )}
+                          </div>
+                          <p className="mt-1 font-mono text-xs text-subtle">
+                            {role.periodLabel}
+                          </p>
+
+                          <ul className="mt-4 divide-y divide-line border-y border-line">
+                            {role.highlights.map((h) => (
+                              <li
+                                key={h}
+                                className="py-3 text-sm leading-relaxed text-muted"
+                              >
+                                {h}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+
+                        {promotionBelow && (
+                          <div className="absolute -left-[2px] bottom-6 flex items-center gap-2">
+                            <span
+                              aria-hidden
+                              className="h-1.5 w-1.5 rotate-45 bg-accent-2"
+                            />
+                            <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-accent-2">
+                              Promoted
+                            </span>
+                          </div>
+                        )}
+                      </li>
+                    );
+                  })}
+                </ol>
+
+                {company.projects.length > 0 && (
+                  <div className="mt-10 pl-8 sm:pl-10">
+                    <h5 className="font-mono text-[11px] uppercase tracking-[0.18em] text-subtle">
+                      Key projects
+                    </h5>
+                    <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                      {company.projects.map((p) => (
+                        <div
+                          key={p.name}
+                          className="glass rounded-xl p-4"
+                        >
+                          <h6 className="text-sm font-semibold text-fg">
+                            {p.name}
+                          </h6>
+                          <p className="mt-1.5 text-[13px] leading-relaxed text-muted">
+                            {p.description}
+                          </p>
+                          <p className="mt-3 font-mono text-[10px] uppercase tracking-wider text-subtle">
+                            {p.technologies.join(" · ")}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </Section>
+  );
+}
