@@ -2,6 +2,30 @@ import type { Project } from "./types";
 
 export const projects: Project[] = [
   {
+    slug: "bizbharat-bot",
+    title: "BizBharat Bot",
+    tier: "featured",
+    summary:
+      "A business support platform built as a monorepo: a Next.js application backed by PostgreSQL, and a separate Python NLP service that classifies incoming customer intents against a governed knowledge base.",
+    highlights: [
+      "Next.js 15 app with Auth.js v5, Prisma and PostgreSQL covering auth, chat, knowledge management and role-based admin.",
+      "Standalone FastAPI service using spaCy and scikit-learn for intent prediction, training and evaluation.",
+      "Whole stack runs end to end under Docker Compose, with Redis wired in for caching.",
+    ],
+    tech: [
+      "Next.js 15",
+      "TypeScript",
+      "FastAPI",
+      "Prisma",
+      "PostgreSQL",
+      "Docker",
+    ],
+    icon: "messageSquare",
+    accent: "indigo",
+    repoUrl: "https://github.com/dev9923/BizBharat-Bot",
+    liveUrl: "https://bizbharat-bot.vercel.app",
+  },
+  {
     slug: "multi-agent-router",
     title: "Multi-Agent AI System",
     tier: "featured",

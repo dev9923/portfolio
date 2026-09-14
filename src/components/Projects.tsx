@@ -16,7 +16,7 @@ export default function Projects() {
         id="work"
         eyebrow="Selected work"
         title="Things I've built"
-        lede="Personal projects, all source-available. The first three are the ones worth reading."
+        lede="Personal projects, all source-available — the ones at the top are worth reading first."
       />
 
       <div className="space-y-6">

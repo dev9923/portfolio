@@ -70,7 +70,7 @@ export default function About() {
               Certifications
             </h3>
             <p className="mt-2 text-[13px] text-muted">
-              Completed outside the degree — applied AI and algorithms.
+              Completed outside the degree — cloud, applied AI and algorithms.
             </p>
             <ul className="mt-4 divide-y divide-line border-y border-line">
               {certifications.map((cert) => {

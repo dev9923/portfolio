@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { Download, Menu, X } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
@@ -67,9 +68,16 @@ export default function Header() {
             className="flex items-center gap-2.5 rounded-lg"
             aria-label={`${site.name} — home`}
           >
-            <span className="grid h-9 w-9 place-items-center rounded-lg bg-gradient-to-br from-accent to-accent-3 font-display text-sm font-bold text-white">
-              DB
-            </span>
+            {/* unoptimized: Next's image optimizer would strip the animation */}
+            <Image
+              src="https://raw.githubusercontent.com/TheDudeThatCode/TheDudeThatCode/master/Assets/Developer.gif"
+              alt=""
+              aria-hidden
+              width={40}
+              height={40}
+              unoptimized
+              className="h-10 w-10 rounded-full border border-glass-line object-cover"
+            />
             <span className="hidden font-display text-base font-semibold text-fg sm:block">
               {site.name}
             </span>

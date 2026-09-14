@@ -5,6 +5,8 @@ export type IconName =
   | "gitBranch"
   | "cpu"
   | "bot"
+  | "messageSquare"
+  | "cloud"
   | "trendingUp"
   | "music"
   | "phone"

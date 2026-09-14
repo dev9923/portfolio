@@ -1,7 +1,7 @@
 import type { Certification, Education } from "./types";
 
 export const education: Education = {
-  degree: "BTech, Computer Science and Engineering (Core)",
+  degree: "BTech, Computer Science",
   institution: "SRM Institute of Science and Technology",
   location: "Kattankulathur, Chennai",
   period: "2022 – 2026",
@@ -10,6 +10,20 @@ export const education: Education = {
 };
 
 export const certifications: Certification[] = [
+  {
+    title: "AWS Cloud Practitioner Essentials",
+    issuer: "Amazon Web Services",
+    summary:
+      "Core AWS services, cloud architecture concepts, security and billing fundamentals.",
+    skills: [
+      "AWS Core Services",
+      "Cloud Concepts",
+      "Cloud Security",
+      "Pricing & Billing",
+    ],
+    icon: "cloud",
+    accent: "amber",
+  },
   {
     title: "IBM SkillsBuild AI NextGen Certification 2026",
     issuer: "IBM",

@@ -84,11 +84,9 @@ export default function Hero() {
                   {statusLine[0]}
                 </span>
               </span>
-              <span className="hidden h-4 w-px bg-line sm:block" />
               <span className="font-mono text-xs text-subtle">
                 {statusLine[1]}
               </span>
-              <span className="hidden h-4 w-px bg-line sm:block" />
               <span className="font-mono text-xs text-subtle">
                 {statusLine[2]}
               </span>

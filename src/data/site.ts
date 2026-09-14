@@ -28,14 +28,14 @@ export const nav = [
 
 export const statusLine = [
   "Software Engineer @ Paytm Payment Services",
-  "BTech CSE (Core), SRMIST — CGPA 8.6/10",
+  "BTech CS, SRM Institute of Science and Technology, Chennai",
   "Java 21 · Spring Boot · React · Node.js",
 ] as const;
 
 export const proofStrip = [
   { label: "Now", value: "Software Engineer, Paytm Payment Services" },
   { label: "Before", value: "SDE Intern, UIDAI — Aadhaar" },
-  { label: "Education", value: "BTech CSE (Core), SRMIST · 8.6/10" },
+  { label: "Education", value: "BTech CS, SRMIST — Chennai" },
   { label: "Core stack", value: "Java 21 · Spring Boot · React · Node.js" },
 ] as const;
 
